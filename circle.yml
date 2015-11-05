@@ -1,0 +1,6 @@
+deployment:
+  production:
+    branch: master
+    commands:
+        - git push git@heroku.com:YOUR_APP_HERE.git $CIRCLE_SHA1:refs/heads/master
+        - heroku run python manage.py migrate --app YOUR_APP_HERE
